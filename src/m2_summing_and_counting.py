@@ -232,7 +232,23 @@ def run_test_count_sines_vs_cosines():
     expected = 4
     actual = count_sines_vs_cosines(3)
     print('Test 3 expected:', expected)
-    
+    print('Test 3 actual:', actual)
+    # Test4
+    expected = 0
+    actual = count_sines_vs_cosines(0)
+    print('Test 4 expected:', expected)
+    print('Test 4 actual:', actual)
+    # test5
+    expected = 1
+    actual = count_sines_vs_cosines(1)
+    print('Test 5 expected:', expected)
+    print('Test 5 actual:', actual)
+    # test 6
+    expected = 2
+    actual = count_sines_vs_cosines(2)
+    print('Test 6 expected:', expected)
+    print('Test 6 actual:', actual)
+
 
 def count_sines_vs_cosines(m):
     """
@@ -266,6 +282,12 @@ def count_sines_vs_cosines(m):
     #   you must NOT use the 2 or 3-parameter versions
     #   of the RANGE expression, if you happen to know them.
     # ------------------------------------------------------------------
+    count = 0
+    for k in range(2*m + 1):
+        if math.sin(k - m) > math.cos(k - m):
+            count = count + 1
+    return count
+
 
 
 # ----------------------------------------------------------------------
